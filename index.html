@@ -7,7 +7,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
     <style>
-        /* ... (todo tu CSS original) ... */
         :root {
             --primary: #0b6cff;
             --accent: #06d6a0;
@@ -206,16 +205,62 @@
             margin-bottom: 0;
             font-weight: 500;
         }
+        /* Temas */
+        .temas-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 32px;
+            margin-top: 20px;
+        }
+        .tema-item {
+            flex: 1 1 220px;
+            max-width: 260px;
+            background: linear-gradient(107deg,#f5fafd 80%, #e7fbed 100%);
+            padding: 20px 19px 16px 19px;
+            border-radius: 13px;
+            border-left: 6px solid var(--primary);
+            box-shadow: 0 4px 14px rgba(11,108,255,0.10);
+            text-align: center;
+        }
+        .tema-logo {
+            width: 65px; height:65px; object-fit:contain; margin: 12px auto 9px auto; display:block;
+        }
+        .tema-nombre {
+            font-size: 1.12rem; font-weight: bold; color: var(--accent); margin-bottom:5px;
+        }
+        .tema-desc {
+            font-size: 0.98rem; color: #233c5e;
+        }
+
+        /* Animación máquina de escribir (Sobre mí) */
+        .typewriter {
+            display: inline-block;
+            border-right: 2px solid var(--primary);
+            white-space: nowrap;
+            overflow: hidden;
+            font-size: 1.12rem;
+            color: #233c5e;
+            font-weight: 500;
+            animation: typing 4s steps(80, end), blink-caret 0.75s step-end infinite;
+            max-width: 97vw;
+        }
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: var(--primary); }
+        }
+
         /* Responsive */
         @media (max-width:900px) {
-            .actividad-grid { flex-direction: column; gap:17px;}
-            .about-content { flex-direction: column; align-items:flex-start; gap:16px;}
+            .actividad-grid, .temas-grid { flex-direction: column; gap:17px;}
             header {flex-direction: column; text-align:center; gap:18px;}
-            .logo-img-main {margin-bottom:8px;}
         }
         @media (max-width:700px){
             header, .section {padding:18px 6vw 18px 7vw;}
-            .actividad-item {min-width:90vw; max-width: 99vw;}
+            .actividad-item, .tema-item {min-width:90vw; max-width: 99vw;}
         }
     </style>
 </head>
@@ -239,11 +284,28 @@
     <!-- SOBRE MI -->
     <section class="section">
         <div class="section-title"><i class="fas fa-user"></i> Sobre mí</div>
-        <div class="about-content">
-            <img src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?fit=crop&w=300&q=90" class="about-img" alt="Foto perfil decorativo">
-            <div class="about-text">
-                Mi nombre es <b>Fernando Antonio Castillo Watts</b>, tengo 19 años y actualmente curso en la Universidad Tecnológica de Panamá. Quiero ser ingeniero, aunque todavía no sé qué rama me apasiona más. <br><br>
-                Este semestre aprendí mucho sobre programación y desarrollo. Me gustaría compartir algunos de los proyectos que realicé en el curso.
+        <div>
+            <span class="typewriter" id="typewriter"></span>
+        </div>
+    </section>
+    <!-- TEMAS APRENDIDOS -->
+    <section class="section">
+        <div class="section-title"><i class="fas fa-book-open"></i> Temas Aprendidos</div>
+        <div class="temas-grid">
+            <div class="tema-item">
+                <img src="logo-python.png" class="tema-logo" alt="Python Logo">
+                <div class="tema-nombre">Python</div>
+                <div class="tema-desc">Aprendí a programar en Python, creando scripts y aplicaciones con interfaz gráfica y conexión a bases de datos.</div>
+            </div>
+            <div class="tema-item">
+                <img src="logo-c.png" class="tema-logo" alt="C Logo">
+                <div class="tema-nombre">Lenguaje C</div>
+                <div class="tema-desc">Resolví problemas utilizando lógica, pseudocódigo y diagramas de flujo, mejorando mi razonamiento algorítmico y dominio del lenguaje C.</div>
+            </div>
+            <div class="tema-item">
+                <img src="logo-html.png" class="tema-logo" alt="HTML Logo">
+                <div class="tema-nombre">HTML</div>
+                <div class="tema-desc">Trabajé en el desarrollo de páginas web usando HTML y buenas prácticas de diseño responsivo y estructuración de contenido.</div>
             </div>
         </div>
     </section>
@@ -261,12 +323,13 @@
             </li>
         </ul>
     </section>
-    <!-- ACTIVIDADES Y DOCUMENTOS ORDENADOS -->
+    <!-- ACTIVIDADES Y DOCUMENTOS ORDENADOS (igual a la última versión pero sin cambios aquí) -->
     <section class="section">
         <div class="section-title"><i class="fas fa-laptop-code"></i> Actividades del curso</div>
         <div class="actividad-grid">
 
-            <!-- EJERCICIO PRÁCTICO 1 -->
+            <!-- ... las actividades iguales a la versión anterior ... -->
+            <!-- EJERCICIO PRACTICO 1 -->
             <div class="actividad-item">
                 <div class="actividad-titulo">EJERCICIO PRACTICO 1</div>
                 <div class="actividad-desc">
@@ -274,8 +337,8 @@
                 </div>
                 <a href="EJERCICIO PRÁCTICO- SAMUEL Y FERNANDO.docx" class="actividad-doc-link" target="_blank">Ver Documento</a>
             </div>
+            <!-- ...y el resto igual ...-->
 
-            <!-- EJERCICIO PRÁCTICO 2 -->
             <div class="actividad-item">
                 <div class="actividad-titulo">EJERCICIO PRACTICO 2</div>
                 <div class="actividad-desc">
@@ -283,8 +346,6 @@
                 </div>
                 <a href="EJERCICIO PRACTICO 2- FERNANDO Y SAMUEL.pdf" class="actividad-doc-link" target="_blank">Ver Documento</a>
             </div>
-
-            <!-- EXAMEN PARCIAL 1 -->
             <div class="actividad-item">
                 <div class="actividad-titulo">EXAMEN PARCIAL 1</div>
                 <div class="actividad-desc">
@@ -292,8 +353,6 @@
                 </div>
                 <a href="examen parcial 1 programacion.pdf" class="actividad-doc-link" target="_blank">Ver Examen</a>
             </div>
-
-            <!-- EXAMEN PARCIAL 2 -->
             <div class="actividad-item">
                 <div class="actividad-titulo">EXAMEN PARCIAL 2</div>
                 <div class="actividad-desc">
@@ -301,8 +360,6 @@
                 </div>
                 <a href="PARCIAL N2 - Samuel y Fernando.pdf" class="actividad-doc-link" target="_blank">Ver Examen</a>
             </div>
-
-            <!-- INVESTIGACIÓN 1 -->
             <div class="actividad-item">
                 <div class="actividad-titulo">INVESTIGACION 1</div>
                 <div class="actividad-desc">
@@ -311,8 +368,6 @@
                 <img src="hexagrama.png" class="img-investigacion" alt="Hexagrama (mapa conceptual)">
                 <img src="infografia.png" class="img-investigacion" alt="Infografía Historia de la Programación">
             </div>
-
-            <!-- INVESTIGACION 2 (Taller 2 Desarrollo) -->
             <div class="actividad-item">
                 <div class="actividad-titulo">INVESTIGACION 2</div>
                 <div class="actividad-desc">
@@ -320,8 +375,6 @@
                 </div>
                 <a href="taller 2 desarrollo.pdf" class="actividad-doc-link" target="_blank">Ver Documento</a>
             </div>
-
-            <!-- LABORATORIO PRÁCTICO 1 (Programación tarea 1) -->
             <div class="actividad-item">
                 <div class="actividad-titulo">LABORATORIO PRACTICO 1</div>
                 <div class="actividad-desc">
@@ -329,8 +382,6 @@
                 </div>
                 <a href="programacion tarea 1.pdf" class="actividad-doc-link" target="_blank">Ver Documento</a>
             </div>
-
-            <!-- TALLER PRÁCTICO 1 (Taller practico N°1) -->
             <div class="actividad-item">
                 <div class="actividad-titulo">TALLER PRACTICO 1</div>
                 <div class="actividad-desc">
@@ -338,8 +389,6 @@
                 </div>
                 <a href="taller practico n°1.pdf" class="actividad-doc-link" target="_blank">Ver Documento</a>
             </div>
-
-            <!-- ANOTACIONES -->
             <div class="actividad-item">
                 <div class="actividad-titulo">ANOTACIONES</div>
                 <div class="actividad-desc">Notas y apuntes sobre desarrollo lógico y los temas más importantes del curso.</div>
@@ -347,5 +396,18 @@
             </div>
         </div>
     </section>
+    <script>
+    // Animación "máquina de escribir" en descripción
+    const textoSobreMi = "Mi nombre es Fernando Antonio Castillo Watts, tengo 19 años y actualmente curso en la Universidad Tecnológica de Panamá. Quiero ser ingeniero, aunque todavía no sé qué rama me apasiona más. Este semestre aprendí mucho sobre programación y desarrollo. Me gustaría compartir algunos de los proyectos que realicé en el curso.";
+    let i = 0;
+    function typeWriter() {
+        if (i < textoSobreMi.length) {
+            document.getElementById("typewriter").innerHTML += textoSobreMi.charAt(i);
+            i++;
+            setTimeout(typeWriter, 24); // velocidad typing
+        }
+    }
+    window.onload = typeWriter;
+    </script>
 </body>
 </html>
