@@ -1,3 +1,4 @@
+// ...existing code...
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -5,20 +6,152 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio: Desarrollo Lógico y Algoritmo</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; padding: 0; background-color: #f4f4f4; }
-        header { background-color: #004d99; color: white; padding: 20px; text-align: center; }
-        .container { width: 90%; max-width: 1200px; margin: 20px auto; padding: 20px; background-color: white; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
-        h2 { color: #333; border-bottom: 2px solid #ccc; padding-bottom: 5px; margin-top: 30px; }
-        .info-card { background-color: #e6f7ff; padding: 15px; border-left: 5px solid #004d99; margin-bottom: 20px; }
-        .assignment { border: 1px solid #ddd; padding: 15px; margin-bottom: 25px; border-radius: 5px; }
-        .assignment h3 { color: #004d99; margin-top: 0; }
+        :root{
+            --bg-1: #f6f8ff;
+            --bg-2: #fff8f3;
+            --primary: #0b6cff;
+            --accent: #ff6b6b;
+            --mint: #06d6a0;
+            --card-shadow: 0 8px 20px rgba(11,108,255,0.08);
+            --glass: rgba(255,255,255,0.6);
+        }
+
+        html,body{height:100%; margin:0; padding:0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color:#24324a;}
+
+        body {
+            background: linear-gradient(135deg, var(--bg-1) 0%, #eaf7ff 40%, var(--bg-2) 100%);
+            -webkit-font-smoothing:antialiased;
+            -moz-osx-font-smoothing:grayscale;
+            padding: 30px 0;
+        }
+
+        header {
+            max-width:1200px;
+            margin: 0 auto 20px;
+            padding: 28px;
+            border-radius: 14px;
+            background: linear-gradient(90deg, rgba(11,108,255,0.95), rgba(6,214,160,0.92));
+            color: white;
+            box-shadow: 0 10px 30px rgba(6,110,220,0.15);
+            display:flex;
+            align-items:center;
+            gap:18px;
+        }
+
+        header .logo {
+            width:72px;
+            height:72px;
+            border-radius:12px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.18), rgba(255,255,255,0.06));
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            font-weight:700;
+            font-size:20px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        header h1{ margin:0; font-size:1.5rem; letter-spacing:0.2px;}
+        header p{ margin:0; opacity:0.95; font-size:0.95rem; }
+
+        .container {
+            width:90%;
+            max-width:1200px;
+            margin: 0 auto;
+            padding: 24px;
+            border-radius: 12px;
+            background: linear-gradient(180deg, rgba(255,255,255,0.82), rgba(255,255,255,0.98));
+            box-shadow: var(--card-shadow);
+            border: 1px solid rgba(15,40,80,0.04);
+        }
+
+        h2 {
+            color: #15304a;
+            border-bottom: 3px solid rgba(11,108,255,0.08);
+            padding-bottom:8px;
+            margin-top: 20px;
+            display:inline-block;
+        }
+
+        .info-card {
+            background: linear-gradient(90deg, rgba(6,214,160,0.08), rgba(11,108,255,0.04));
+            padding: 18px;
+            border-left: 6px solid var(--primary);
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        .info-card ul { margin:8px 0 0 18px; padding:0; }
+        .info-card li { margin-bottom:6px; }
+
+        .assignment {
+            border-radius: 10px;
+            padding: 16px;
+            margin-bottom: 18px;
+            background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(245,252,255,0.9));
+            border: 1px solid rgba(10,30,60,0.04);
+            transition: transform 220ms ease, box-shadow 220ms ease;
+            box-shadow: 0 6px 18px rgba(16,38,80,0.04);
+        }
+
+        .assignment:hover{
+            transform: translateY(-6px);
+            box-shadow: 0 18px 40px rgba(11,108,255,0.09);
+        }
+
+        .assignment h3 {
+            color: var(--primary);
+            margin:0 0 6px 0;
+            font-size:1.05rem;
+        }
+
+        .assignment p { margin:8px 0 10px 0; color:#2b3b50; }
+
+        .assignment ul { margin:0; padding-left:18px; }
+
+        a.doc-link {
+            display:inline-block;
+            padding:8px 12px;
+            background: linear-gradient(90deg, var(--primary), #00b4ff);
+            color:white;
+            text-decoration:none;
+            border-radius:8px;
+            font-weight:600;
+            box-shadow: 0 6px 18px rgba(11,108,255,0.12);
+            transition: transform 160ms ease, opacity 160ms;
+        }
+
+        a.doc-link:hover{ transform: translateY(-3px); opacity:0.95; }
+
+        /* small badges for concepts */
+        .badge {
+            display:inline-block;
+            margin:4px 6px 4px 0;
+            padding:6px 8px;
+            background: linear-gradient(90deg, rgba(11,108,255,0.12), rgba(6,214,160,0.06));
+            color: #07305a;
+            border-radius: 999px;
+            font-size:0.85rem;
+            border: 1px solid rgba(11,108,255,0.06);
+        }
+
+        /* responsive */
+        @media (max-width:700px){
+            header{flex-direction:column; align-items:flex-start; padding:18px;}
+            header .logo{width:56px;height:56px;font-size:18px;}
+            .container{padding:16px;}
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Portafolio: Desarrollo Lógico y Algoritmo</h1>
-        <p>Universidad Tecnológica de Panamá</p>
+        <div class="logo">FD</div>
+        <div>
+            <h1>Portafolio: Desarrollo Lógico y Algoritmo</h1>
+            <p>Universidad Tecnológica de Panamá</p>
+        </div>
     </header>
 
     <div class="container">
@@ -39,105 +172,104 @@
         <div class="assignment">
             <h3>1. Ejercicio Práctico 1</h3>
             <p>
-                <strong>Comentario Personal:</strong> Este trabajo tenía que realizar problemas de **Lenguaje C** y entregarlos en formato de **Diagrama de Flujos**, **Pseudocódigo** y **Prueba de Escritorio**. Estos problemas tenían cierto grado de dificultad, porque se tenía que aplicar **Matemáticas y Álgebra** en algunos de los problemas. La lógica principal era determinar sueldo bruto, límite de crédito y cálculos de viaje usando **condicionales**.
+                <strong>Comentario Personal:</strong> Este trabajo tenía que realizar problemas de <span class="badge">Lenguaje C</span> y entregarlos en formato de <span class="badge">Diagrama de Flujos</span>, <span class="badge">Pseudocódigo</span> y <span class="badge">Prueba de Escritorio</span>. Estos problemas tenían cierto grado de dificultad, porque se tenía que aplicar <span class="badge">Matemáticas</span> en algunos de los problemas.
             </p>
             <ul>
-                <li><strong>Conceptos Clave:</strong> Pseudocódigo, Diagramas de Flujos, Prueba de Escritorio, Estructuras Condicionales (`IF/ELSE`), Lógica de Cálculos Salariales.</li>
-                <li><strong>Enlace al Documento:</strong> <a href="EJERCICIO PRÁCTICO- SAMUEL Y FERNANDO.docx" target="_blank">Ver Documento (DOCX) en GitHub</a></li>
+                <li><strong>Conceptos Clave:</strong> Pseudocódigo, Diagramas de Flujos, Prueba de Escritorio, Estructuras Condicionales (IF/ELSE), Lógica de Cálculos Salariales.</li>
+                <li><strong>Enlace al Documento:</strong> <a class="doc-link" href="EJERCICIO PRÁCTICO- SAMUEL Y FERNANDO.docx" target="_blank">Ver Documento (DOCX)</a></li>
             </ul>
         </div>
 
         <div class="assignment">
             <h3>2. Ejercicio Práctico 2</h3>
             <p>
-                <strong>Comentario Personal:</strong> En el Ejercicio Práctico 2 teníamos que usar una **Máquina Virtual (VM)** para configurar el **FTP o AnyDesk**, y así hacer pruebas pasándonos archivos desde la máquina virtual a la computadora principal y viceversa. La parte de código incluyó el reto de la **conversión de horas (24h a 12h)** implementado en **Python**.
+                <strong>Comentario Personal:</strong> En el Ejercicio Práctico 2 usamos una <span class="badge">Máquina Virtual (VM)</span> para configurar <span class="badge">FTP</span> y probar transferencia de archivos. También implementamos conversión de horas (24h → 12h) en <span class="badge">Python</span>.
             </p>
             <ul>
-                <li><strong>Conceptos Clave:</strong> Virtualización (VM), Configuración de Servidores (FTP/AnyDesk), Transferencia de Archivos, Conversión de Horas, Python.</li>
-                <li><strong>Enlace al Documento:</strong> <a href="EJERCICIO PRACTICO 2- FERNANDO Y SAMUEL.pdf" target="_blank">Ver Documento (PDF) en GitHub</a></li>
+                <li><strong>Conceptos Clave:</strong> Virtualización (VM), Configuración de Servidores, Transferencia de Archivos, Conversión de Horas, Python.</li>
+                <li><strong>Enlace al Documento:</strong> <a class="doc-link" href="EJERCICIO PRACTICO 2- FERNANDO Y SAMUEL.pdf" target="_blank">Ver Documento (PDF)</a></li>
             </ul>
         </div>
 
         <div class="assignment">
             <h3>3. Examen Parcial 1</h3>
             <p>
-                <strong>Comentario Personal:</strong> El primer parcial trataba de 5 problemas de **Lenguaje C**. En este caso nos dejaron usar la IA, pero nos costó porque nos pedían, **Prueba de Escritorio**, **Diagrama de Flujos** y **Pseudocódigos**, y sí, con IA resulta más fácil, pero no quita lo tedioso que es hacer un diagrama de flujos y revisar todos los pseudocódigos (no terminé). Los problemas eran complejos con **condicionales anidados** (hora, salario).
+                <strong>Comentario Personal:</strong> El primer parcial trataba de 5 problemas de <span class="badge">Lenguaje C</span>. Nos pedían Prueba de Escritorio, Diagrama de Flujos y Pseudocódigos; los problemas incluían condicionales anidados y lógica salarial.
             </p>
             <ul>
-                <li><strong>Conceptos Clave:</strong> Lenguaje C, Pseudocódigo, Diagramas de Flujos, Prueba de Escritorio, Condicionales Anidadas, Lógica de Salario e Impuestos.</li>
-                <li><strong>Enlace al Documento:</strong> <a href="Examen parcial 1 programacion.pdf" target="_blank">Ver Examen (PDF) en GitHub</a></li>
+                <li><strong>Conceptos Clave:</strong> Lenguaje C, Pseudocódigo, Diagramas de Flujos, Prueba de Escritorio, Condicionales Anidadas.</li>
+                <li><strong>Enlace al Documento:</strong> <a class="doc-link" href="Examen parcial 1 programacion.pdf" target="_blank">Ver Examen (PDF)</a></li>
             </ul>
         </div>
 
         <div class="assignment">
             <h3>4. Examen Parcial 2</h3>
             <p>
-                <strong>Comentario Personal:</strong> Este parcial 2 tenía 4 partes bastante largas, por eso era en grupo de 2. Nos pedía diseñar un **Sistema POS (Punto de Venta)**, que implementamos en **Python con interfaz gráfica (Tkinter)**, cubriendo inventario y facturación. La parte teórica fue investigar sobre **Arquitecturas SGBD (bases de datos)** y cómo configurar un **Firewall** para mitigar ataques de seguridad como el **DDOS**.
+                <strong>Comentario Personal:</strong> Parcial en equipo: diseñamos un <span class="badge">POS (Punto de Venta)</span> en <span class="badge">Python/Tkinter</span>, con inventario y facturación. Investigamos arquitecturas SGBD y configuraciones de firewall para DDOS.
             </p>
             <ul>
-                <li><strong>Conceptos Clave:</strong> Python/Tkinter (Interfaz Gráfica), Lógica POS, Arquitectura SGBD (Bases de Datos), Seguridad (Firewall, DDOS).</li>
-                <li><strong>Enlace al Documento:</strong> <a href="PARCIAL N2 - Samuel y Fernando.pdf" target="_blank">Ver Examen (PDF) en GitHub</a></li>
+                <li><strong>Conceptos Clave:</strong> Python/Tkinter, Lógica POS, Arquitectura SGBD, Seguridad (Firewall, DDOS).</li>
+                <li><strong>Enlace al Documento:</strong> <a class="doc-link" href="PARCIAL N2 - Samuel y Fernando.pdf" target="_blank">Ver Examen (PDF)</a></li>
             </ul>
         </div>
 
         <div class="assignment">
             <h3>5. Taller Práctico 1</h3>
             <p>
-                <strong>Comentario Personal:</strong> Taller intenso que nos hizo investigar sobre la gestión de listas: **Búsqueda Secuencial** en **Arreglos** y la configuración de una conexión **Python-MySQL**. Aplicamos esta teoría a un prototipo de **Sistema de Alquiler de Equipos**, donde tuvimos que modelar las tablas y la lógica para que el código pudiera **insertar, actualizar** y manejar el **estado** (`ACTIVO`/`NO ACTIVO`) del inventario.
+                <strong>Comentario Personal:</strong> Investigación sobre gestión de listas y <span class="badge">Búsqueda Secuencial</span> en arreglos; además configuramos conexión <span class="badge">Python-MySQL</span> para un prototipo de sistema de alquiler.
             </p>
             <ul>
-                <li><strong>Conceptos Clave:</strong> Arreglos, Búsqueda Secuencial, Python-MySQL, Replicación de BD, Lógica de Inventario.</li>
-                <li><strong>Enlace al Documento:</strong> <a href="TALLER PRÁCTICO N°1.pdf" target="_blank">Ver Documento (PDF) en GitHub</a></li>
+                <li><strong>Conceptos Clave:</strong> Arreglos, Búsqueda Secuencial, Python-MySQL, Lógica de Inventario.</li>
+                <li><strong>Enlace al Documento:</strong> <a class="doc-link" href="TALLER PRÁCTICO N°1.pdf" target="_blank">Ver Documento (PDF)</a></li>
             </ul>
         </div>
 
         <div class="assignment">
             <h3>6. Laboratorio Práctico 1</h3>
             <p>
-                <strong>Comentario Personal:</strong> Los primeros ejercicios del semestre, enfocados en **algoritmos secuenciales** y la sintaxis de **Lenguaje C**. La actividad era muy directa: problemas de **input/output** (usando `printf`/`scanf`), calcular el **precio neto** de un producto con un margen de ganancia, aplicar el **Teorema de Pitágoras** para hallar la hipotenusa, y hacer el total de ventas simples (refrescos). Pura secuencia y fórmulas básicas.
+                <strong>Comentario Personal:</strong> Ejercicios iniciales: algoritmos secuenciales en <span class="badge">C</span>, operaciones I/O, precio neto, Teorema de Pitágoras y totales de ventas.
             </p>
             <ul>
-                <li><strong>Conceptos Clave:</strong> Algoritmos Secuenciales, Lenguaje C (printf/scanf), Operaciones Aritméticas, Teorema de Pitágoras.</li>
-                <li><strong>Enlace al Documento:</strong> <a href="programacion tarea 1.pdf" target="_blank">Ver Documento (PDF) en GitHub</a></li>
+                <li><strong>Conceptos Clave:</strong> Algoritmos Secuenciales, Lenguaje C, Operaciones Aritméticas.</li>
+                <li><strong>Enlace al Documento:</strong> <a class="doc-link" href="programacion tarea 1.pdf" target="_blank">Ver Documento (PDF)</a></li>
             </ul>
         </div>
 
         <div class="assignment">
             <h3>7. Investigación 2 (FODA y Redes)</h3>
             <p>
-                <strong>Comentario Personal:</strong> Esta actividad fue dividida entre análisis de código y diseño de redes. Por un lado, hicimos un **Análisis FODA** para comparar a fondo las ventajas y desventajas del **Lenguaje C** frente a **Python**. Por otro lado, usamos **Cisco Packet Tracer** para diseñar la **Red LAN** de una oficina, donde lo principal fue asignar el **Direccionamiento IP** y las **Máscaras de Subred** correctamente.
+                <strong>Comentario Personal:</strong> Análisis FODA (C vs Python) y diseño de red LAN en Cisco Packet Tracer, con direccionamiento IP y máscaras de subred.
             </p>
             <ul>
-                <li><strong>Conceptos Clave:</strong> Análisis FODA (C vs Python), Diseño de Redes LAN, Cisco Packet Tracer, Direccionamiento IP y Subredes.</li>
-                <li><strong>Enlace al Documento:</strong> <a href="taller 2 desarrollo.pdf" target="_blank">Ver Documento (PDF) en GitHub</a></li>
+                <li><strong>Conceptos Clave:</strong> FODA, Diseño de Redes, Cisco Packet Tracer, Direccionamiento IP.</li>
+                <li><strong>Enlace al Documento:</strong> <a class="doc-link" href="taller 2 desarrollo.pdf" target="_blank">Ver Documento (PDF)</a></li>
             </ul>
         </div>
 
         <div class="assignment">
             <h3>8. Investigación 1: Infografía de la Historia de la Programación</h3>
             <p>
-                <strong>Comentario Personal:</strong> Tarea de contexto teórico. La **Infografía** se centró en la **Historia de la Programación**, para entender de dónde vienen los lenguajes que usamos, el impacto del **Lenguaje C** y la evolución de los sistemas de cómputo. Fue útil para tener una base conceptual de la materia.
+                <strong>Comentario Personal:</strong> Infografía sobre la historia de la programación y la evolución de lenguajes como C.
             </p>
             <ul>
-                <li><strong>Conceptos Clave:</strong> Historia de la Computación, Lenguaje C (Contexto), Evolución de Sistemas.</li>
-                <li><strong>Enlace al Documento:</strong> <a href="Infografia Historia de la programacion.pdf" target="_blank">Ver Documento (PDF) en GitHub</a></li>
+                <li><strong>Conceptos Clave:</strong> Historia de la Computación, Lenguaje C, Evolución de Sistemas.</li>
+                <li><strong>Enlace al Documento:</strong> <a class="doc-link" href="Infografia Historia de la programacion.pdf" target="_blank">Ver Documento (PDF)</a></li>
             </ul>
         </div>
 
         <div class="assignment">
             <h3>9. Investigación 1: Hexagrama del Curso</h3>
             <p>
-                <strong>Comentario Personal:</strong> Tarea de contexto teórico. El **Hexagrama** era un mapa conceptual para tener una visión general de los temas del semestre (ciclos, modularidad, etc.). Es un esquema útil para visualizar el orden y la relación entre los conceptos clave del curso.
+                <strong>Comentario Personal:</strong> Hexagrama como mapa conceptual del semestre (ciclos, modularidad, etc.) para visualizar relaciones entre temas.
             </p>
             <ul>
-                <li><strong>Conceptos Clave:</strong> Estructuras de Control, Modularidad, Diagramación, Visión General del Contenido.</li>
-                <li><strong>Enlace al Documento:</strong> <a href="hexagrama programacion semestre 2.pdf" target="_blank">Ver Documento (PDF) en GitHub</a></li>
+                <li><strong>Conceptos Clave:</strong> Estructuras de Control, Modularidad, Diagramación.</li>
+                <li><strong>Enlace al Documento:</strong> <a class="doc-link" href="hexagrama programacion semestre 2.pdf" target="_blank">Ver Documento (PDF)</a></li>
             </ul>
         </div>
-        
-        <p style="text-align: center; margin-top: 50px; padding-bottom: 20px;">Portafolio de Desarrollo Lógico y Algoritmo. ¡Trabajo terminado!</p>
-        
+
     </div>
-    
+
 </body>
 </html>
+// ...existing code...
