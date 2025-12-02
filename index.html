@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
     <style>
+        /* ... (todo tu CSS original) ... */
         :root {
             --primary: #0b6cff;
             --accent: #06d6a0;
@@ -15,6 +16,19 @@
             --text: #202B3D;
             --shadow: 0 8px 36px rgba(40,60,100,0.09);
             --border: 1.5px solid #f0f4fa;
+        }
+        .logo-utp-portada {
+            width: 145px;
+            margin: 25px auto 6px auto;
+            display: block;
+        }
+        .utp-title-center {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            color: var(--primary);
         }
         html,body {
             height: 100%;
@@ -31,7 +45,7 @@
         }
         header {
             max-width: 1060px;
-            margin: 30px auto 30px;
+            margin: 20px auto 30px;
             background: linear-gradient(100deg, var(--primary) 70%, var(--accent) 100%);
             color: white;
             border-radius: 16px;
@@ -88,7 +102,6 @@
             transform: scale(1.15);
             box-shadow: 0 2px 12px rgba(11,108,255,0.14);
         }
-
         .section {
             max-width: 1100px;
             margin: 36px auto;
@@ -119,168 +132,98 @@
         .section-title i {
             font-size: 1.33em; color:var(--primary); 
         }
-        /* Sobre mí */
-        .about-content {
-            display: flex;
-            align-items: center;
-            gap: 32px;
-            flex-wrap: wrap;
+        .actividad-titulo {
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.23rem;
+            margin: 10px 0 3px 0;
+            letter-spacing: 0.8px;
         }
-        .about-img {
-            width: 170px; border-radius:16px; flex-shrink: 0; box-shadow: 0 5px 20px rgba(6,214,160,0.09);
-            object-fit: cover; background: #eee;
-        }
-        .about-text {
-            font-size: 1.12rem;
-            line-height: 1.75;
+        .actividad-desc {
+            font-size: 1.06rem;
+            margin-bottom: 7px;
             color: #233c5e;
             font-weight: 500;
         }
-        /* Contacto */
-        .contact-list {
-            margin: 18px 0 0 0;
-            list-style: none;
-            padding: 0;
-        }
-        .contact-item {
-            font-size: 1.08rem;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            transition: color .18s;
-        }
-        .contact-link {
-            color: var(--primary);
-            font-weight: 600;
+        .actividad-doc-link {
+            color: #fff;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border: none;
+            border-radius: 7px;
+            padding: 6px 16px;
+            font-size: 1.04rem;
             text-decoration: none;
-            border-bottom: 2px solid var(--accent);
-            padding-bottom:1px;
-            transition: color 0.2s;
+            font-weight: 600;
+            transition: background 0.19s, transform 0.17s, opacity 0.16s;
+            margin: 8px 0 12px 0;
+            display:inline-block;
+            box-shadow: 0 2px 6px rgba(11,108,255,0.09);
         }
-        .contact-link:hover {
-            color: #118c5d;
-            border-color: var(--primary);
+        .actividad-doc-link:hover {
+            background: linear-gradient(90deg, var(--accent), var(--primary));
+            opacity: 0.93;
+            transform: scale(1.03);
         }
-
-        /* Apuntes */
-        .notes-list {
-            display: flex;
-            gap: 18px;
-            flex-wrap: wrap;
-            margin: 0;
-            margin-top: 20px;
-            padding: 0;
-        }
-        .note-card {
-            background: linear-gradient(105deg, #e8f6fa 80%, #e4ffef 100%);
-            border-radius: 12px;
-            box-shadow: 0 4px 16px rgba(6,214,160,0.10);
-            padding: 20px 22px 14px 22px;
-            width: 280px;
-            max-width:90vw;
-            margin-bottom:16px;
-            border-left: 6px solid var(--accent);
-            transition: box-shadow 0.19s, transform 0.18s;
-            position: relative;
-        }
-        .note-card:hover {
-            box-shadow: 0 10px 36px rgba(11,108,255,0.17);
-            transform: translateY(-3px) scale(1.04);
-        }
-        .note-title {
-            font-size: 1.18rem;
-            margin:0 0 8px 0;
-            color: var(--primary);
-            font-weight: 700;
-        }
-        .note-text {
-            font-size: 0.99rem;
-            color: #355361;
-            margin-bottom: 0;
-        }
-        .note-img {
-            width: 46px; height: 46px; border-radius: 50%; object-fit:cover;
-            position:absolute; right: 10px; bottom: 9px; box-shadow: 0 3px 13px rgba(0,0,0,0.07);
-            border:2px solid #fff;
-        }
-        /* Proyectos */
-        .project-list {
+        .actividad-grid {
             display: flex;
             flex-wrap: wrap;
-            gap: 24px;
-            margin-top: 18px;
-            justify-content: flex-start;
+            gap: 33px;
+            margin-top: 10px;
         }
-        .project-card {
-            background: linear-gradient(110deg, #f0f4ff 60%, #eefcf7 100%);
+        .actividad-item {
+            background: linear-gradient(110deg, #f0f4ff 70%, #eefcf7 100%);
             border-radius: 13px;
             box-shadow: 0 3px 12px rgba(11,108,255,0.07);
-            width: 330px;
-            max-width: 95vw;
-            padding: 20px 20px 16px 22px;
-            margin-bottom: 13px;
+            padding: 24px 22px 18px 25px;
+            min-width: 310px;
+            max-width: 420px;
+            flex: 1 1 340px;
+            margin-bottom: 9px;
             border-left: 6px solid var(--primary);
             transition: box-shadow 0.17s, transform 0.16s;
             position:relative;
             overflow:hidden;
         }
-        .project-card:hover {
-            box-shadow: 0 14px 34px rgba(11,108,255,0.13);
-            transform: scale(1.04);
-        }
-        .project-title {
-            color: var(--primary);
-            font-size: 1.12rem;
-            font-weight: 700;
-            margin: 0 0 7.5px 0;
-        }
-        .project-desc {
-            font-size: 1.01rem;
-            color: #2a3a58;
-            margin: 0 0 12px 0;
-            min-height: 56px;
-        }
-        .project-img {
-            width: 78px; height: 78px; object-fit:cover; border-radius:12px;
-            box-shadow: 0 2px 10px rgba(11,108,255,0.06);
-            position:absolute; right:18px; bottom:10px;
-            border:2px solid #fff;
+        .img-actividad {
+            width: 80px; height: 80px; object-fit:cover; border-radius:15px; margin-top: 15px; border:2px solid #fff;
             background:#e5f3fd;
+            box-shadow: 0 2px 10px rgba(11,108,255,0.06);
         }
-        .project-link {
-            color: #fff;
-            background: linear-gradient(90deg, var(--primary), var(--accent) 100%);
-            border: none;
-            border-radius: 8px;
-            padding: 8px 19px;
-            font-weight: 600;
-            font-size: 1.04rem;
-            text-decoration: none;
-            transition: background 0.19s, transform 0.17s, opacity 0.16s;
-            margin-top: 8px;
-            display:inline-block;
-            box-shadow: 0 2px 6px rgba(11,108,255,0.09);
+        .img-investigacion {
+            width: 140px;
+            max-width: 50vw;
+            display: block;
+            margin: 12px 0;
+            border-radius: 14px; 
+            background: #f2f2f2;
         }
-        .project-link:hover {
-            background: linear-gradient(90deg, var(--accent), var(--primary) 97%);
-            transform: scale(1.05);
-            opacity: 0.97;
+        .nota-anotaciones {
+            font-size: 1.10rem;
+            padding: 19px;
+            background: linear-gradient(100deg,#f3ffea 60%,#e8f8ff 100%);
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(11,108,255,0.07);
+            margin-bottom: 0;
+            font-weight: 500;
         }
         /* Responsive */
         @media (max-width:900px) {
+            .actividad-grid { flex-direction: column; gap:17px;}
             .about-content { flex-direction: column; align-items:flex-start; gap:16px;}
             header {flex-direction: column; text-align:center; gap:18px;}
             .logo-img-main {margin-bottom:8px;}
         }
         @media (max-width:700px){
             header, .section {padding:18px 6vw 18px 7vw;}
-            .project-card, .note-card {width: 96vw;}
+            .actividad-item {min-width:90vw; max-width: 99vw;}
         }
     </style>
 </head>
 <body>
-    <!-- HEADER -->
+    <!-- PORTADA/LOGO UNIVERSIDAD -->
+    <img src="logo-utp.png" alt="Logo UTP" class="logo-utp-portada">
+    <div class="utp-title-center">Universidad Tecnológica de Panamá</div>
+    <!-- HEADER PERSONAL -->
     <header>
         <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?fit=crop&w=300&q=90" alt="Universidad o tecnología" class="logo-img-main">
         <div class="header-text">
@@ -299,8 +242,7 @@
         <div class="about-content">
             <img src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?fit=crop&w=300&q=90" class="about-img" alt="Foto perfil decorativo">
             <div class="about-text">
-                Mi nombre es <b>Fernando Antonio Castillo Watts</b>, tengo 19 años y actualmente curso en la Universidad Tecnológica de Panamá. Quiero ser ingeniero, aunque todavía no sé qué rama exacta estudiar. Me gusta mucho practicar deportes, pasar tiempo en familia y enfrentarme a nuevos retos. 
-                <br><br>
+                Mi nombre es <b>Fernando Antonio Castillo Watts</b>, tengo 19 años y actualmente curso en la Universidad Tecnológica de Panamá. Quiero ser ingeniero, aunque todavía no sé qué rama me apasiona más. <br><br>
                 Este semestre aprendí mucho sobre programación y desarrollo. Me gustaría compartir algunos de los proyectos que realicé en el curso.
             </div>
         </div>
@@ -319,56 +261,90 @@
             </li>
         </ul>
     </section>
-    <!-- APUNTES -->
+    <!-- ACTIVIDADES Y DOCUMENTOS ORDENADOS -->
     <section class="section">
-        <div class="section-title"><i class="fas fa-sticky-note"></i> Apuntes</div>
-        <div class="notes-list">
-            <div class="note-card">
-                <div class="note-title">Lógica de Programación</div>
-                <div class="note-text">Los algoritmos son instrucciones claras para resolver problemas. Pensar lógicamente ayuda a planear el código antes de escribirlo.</div>
-                <img class="note-img" src="https://images.unsplash.com/photo-1464983953574-0892a716854b?fit=crop&w=120&q=70" alt="Algoritmos">
+        <div class="section-title"><i class="fas fa-laptop-code"></i> Actividades del curso</div>
+        <div class="actividad-grid">
+
+            <!-- EJERCICIO PRÁCTICO 1 -->
+            <div class="actividad-item">
+                <div class="actividad-titulo">EJERCICIO PRACTICO 1</div>
+                <div class="actividad-desc">
+                    Este trabajo tenia que realizar problema de lenguaje C y entregarlos en formato de diagrama de flujos, pseudocodigo y prueba de escritorio, estos problemas tenían cierto grado de dificultad, porque se tenia que aplicar matemáticas y algebra en algunos de los problemas
+                </div>
+                <a href="EJERCICIO PRÁCTICO- SAMUEL Y FERNANDO.docx" class="actividad-doc-link" target="_blank">Ver Documento</a>
             </div>
-            <div class="note-card">
-                <div class="note-title">Estructuras Condicionales</div>
-                <div class="note-text">Permiten tomar decisiones en el programa usando <b>if</b> y <b>else</b>. Son básicas para problemas de lógica.</div>
-                <img class="note-img" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?fit=crop&w=120&q=70" alt="Condicionales">
+
+            <!-- EJERCICIO PRÁCTICO 2 -->
+            <div class="actividad-item">
+                <div class="actividad-titulo">EJERCICIO PRACTICO 2</div>
+                <div class="actividad-desc">
+                    En el ejercicio practico 2 teníamos que usar una maquina virtual para configurar el ftp o anydesk, y asi hacer prueba pasándonos archivos desde la maquina virtual a la computadora principal y viceversa
+                </div>
+                <a href="EJERCICIO PRACTICO 2- FERNANDO Y SAMUEL.pdf" class="actividad-doc-link" target="_blank">Ver Documento</a>
             </div>
-            <div class="note-card">
-                <div class="note-title">Diagrama de Flujos</div>
-                <div class="note-text">Esquema gráfico que muestra el flujo de un algoritmo. Ayuda a entender la secuencia de pasos o procesos.</div>
-                <img class="note-img" src="https://images.unsplash.com/photo-1448932223592-d1fc686e76ea?fit=crop&w=120&q=70" alt="Flujo">
+
+            <!-- EXAMEN PARCIAL 1 -->
+            <div class="actividad-item">
+                <div class="actividad-titulo">EXAMEN PARCIAL 1</div>
+                <div class="actividad-desc">
+                    El primer parcial trataba de 5 problemas de lenguaje C, en este caso nos dejaron usar la IA , pero nos costo porque nos pedían, prueba de escritorio, diagrama de flujos y pseudocodigos y si, con IA resulta mas fácil, pero no quita lo tedioso que es hacer un diagrama de flujos y revisar todos los pseudocodigos (no termine)
+                </div>
+                <a href="examen parcial 1 programacion.pdf" class="actividad-doc-link" target="_blank">Ver Examen</a>
             </div>
-        </div>
-    </section>
-    <!-- PROYECTOS -->
-    <section class="section">
-        <div class="section-title"><i class="fas fa-laptop-code"></i> Proyectos del curso</div>
-        <div class="project-list">
-            <div class="project-card">
-                <div class="project-title">Ejercicio Práctico 1</div>
-                <div class="project-desc">Problemas de <span style="color:var(--primary);font-weight:bold;">Lenguaje C</span>, diagramas de flujo y pseudocódigo. Organizé ideas antes de codificar.</div>
-                <a href="EJERCICIO PRÁCTICO- SAMUEL Y FERNANDO.docx" class="project-link" target="_blank">Ver Documento</a>
-                <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?fit=crop&w=180&q=80" alt="Ejercicio 1" class="project-img">
+
+            <!-- EXAMEN PARCIAL 2 -->
+            <div class="actividad-item">
+                <div class="actividad-titulo">EXAMEN PARCIAL 2</div>
+                <div class="actividad-desc">
+                    Este parcial 2 tenía 4 partes, bastante largas, por eso era en grupo de 2, nos pedia diseñar un Sistema POS (Punto de Venta), que implementamos en Python con interfaz gráfica (Tkinter), cubriendo inventario y facturación. La parte teórica fue investigar sobre arquitecturas SGBD (bases de datos) y cómo configurar un Firewall para mitigar ataques de seguridad como el DDOS.
+                </div>
+                <a href="PARCIAL N2 - Samuel y Fernando.pdf" class="actividad-doc-link" target="_blank">Ver Examen</a>
             </div>
-            <div class="project-card">
-                <div class="project-title">Ejercicio Práctico 2</div>
-                <div class="project-desc">VM para servidores FTP, transferencias de archivos y práctica con Python y sistemas virtualizados.</div>
-                <a href="EJERCICIO PRACTICO 2- FERNANDO Y SAMUEL.pdf" class="project-link" target="_blank">Ver Documento</a>
-                <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?fit=crop&w=180&q=80" class="project-img" alt="Virtualización">
+
+            <!-- INVESTIGACIÓN 1 -->
+            <div class="actividad-item">
+                <div class="actividad-titulo">INVESTIGACION 1</div>
+                <div class="actividad-desc">
+                    Estas fueron tareas de contexto teórico. El Hexagrama era un mapa conceptual para tener una visión general de los temas del semestre (ciclos, modularidad, etc.). La Infografía se centró en la Historia de la Programación, para entender de dónde vienen los lenguajes que usamos, el impacto del Lenguaje C y la evolución de los sistemas de cómputo.
+                </div>
+                <img src="hexagrama.png" class="img-investigacion" alt="Hexagrama (mapa conceptual)">
+                <img src="infografia.png" class="img-investigacion" alt="Infografía Historia de la Programación">
             </div>
-            <div class="project-card">
-                <div class="project-title">Examen Parcial 1</div>
-                <div class="project-desc">5 problemas en <b>C</b>, prueba de escritorio y diagramas. Reforcé la lógica paso a paso.</div>
-                <a href="Examen parcial 1 programacion.pdf" class="project-link" target="_blank">Ver Examen</a>
-                <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?fit=crop&w=180&q=80" class="project-img" alt="Examen 1">
+
+            <!-- INVESTIGACION 2 (Taller 2 Desarrollo) -->
+            <div class="actividad-item">
+                <div class="actividad-titulo">INVESTIGACION 2</div>
+                <div class="actividad-desc">
+                    Esta actividad fue dividida entre análisis de código y diseño de redes. Por un lado, hicimos un Análisis FODA para comparar a fondo las ventajas y desventajas del Lenguaje C frente a Python. Por otro lado, usamos Cisco Packet Tracer para diseñar la Red LAN de una oficina, donde lo principal fue asignar el Direccionamiento IP y las Máscaras de Subred correctamente
+                </div>
+                <a href="taller 2 desarrollo.pdf" class="actividad-doc-link" target="_blank">Ver Documento</a>
             </div>
-            <div class="project-card">
-                <div class="project-title">Examen Parcial 2</div>
-                <div class="project-desc">Sistema POS en Python/Tkinter, inventario y facturación. Gran trabajo en equipo y aprendizaje de interfaces gráficas.</div>
-                <a href="PARCIAL N2 - Samuel y Fernando.pdf" class="project-link" target="_blank">Ver Examen</a>
-                <img src="https://images.unsplash.com/photo-1453928582365-b6ad33cbcf64?fit=crop&w=180&q=80" alt="POS Python" class="project-img">
+
+            <!-- LABORATORIO PRÁCTICO 1 (Programación tarea 1) -->
+            <div class="actividad-item">
+                <div class="actividad-titulo">LABORATORIO PRACTICO 1</div>
+                <div class="actividad-desc">
+                    Los primeros ejercicios del semestre, enfocados en algoritmos secuenciales y la sintaxis de Lenguaje C. La actividad era muy directa: problemas de input/output (usando printf/scanf), calcular el precio neto de un producto con un margen de ganancia, aplicar el Teorema de Pitágoras para hallar la hipotenusa, y hacer el total de ventas simples (refrescos). Pura secuencia y fórmulas.
+                </div>
+                <a href="programacion tarea 1.pdf" class="actividad-doc-link" target="_blank">Ver Documento</a>
             </div>
-            <!-- Puedes seguir agregando más proyectos aquí con el mismo formato -->
+
+            <!-- TALLER PRÁCTICO 1 (Taller practico N°1) -->
+            <div class="actividad-item">
+                <div class="actividad-titulo">TALLER PRACTICO 1</div>
+                <div class="actividad-desc">
+                    Taller intenso que nos hizo investigar sobre la gestión de listas: Búsqueda Secuencial en Arreglos y la configuración de una conexión Python-MySQL. Aplicamos esta teoría a un prototipo de Sistema de Alquiler de Equipos, donde tuvimos que modelar las tablas y la lógica para que el código pudiera insertar, actualizar y manejar el estado (ACTIVO/NO ACTIVO) del inventario.
+                </div>
+                <a href="taller practico n°1.pdf" class="actividad-doc-link" target="_blank">Ver Documento</a>
+            </div>
+
+            <!-- ANOTACIONES -->
+            <div class="actividad-item">
+                <div class="actividad-titulo">ANOTACIONES</div>
+                <div class="actividad-desc">Notas y apuntes sobre desarrollo lógico y los temas más importantes del curso.</div>
+                <a href="apuntes desarrollo logico.pdf" class="actividad-doc-link" target="_blank">Ver Apuntes</a>
+            </div>
         </div>
     </section>
 </body>
